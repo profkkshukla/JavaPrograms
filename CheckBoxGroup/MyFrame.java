@@ -6,6 +6,10 @@ import java.lang.*;
 
 public class MyFrame extends Frame
 {
+	MenuBar mb1;
+	Menu m1,m2,mi4;
+	MenuItem mi1,mi2,mi3,mi5,mi6;
+	CheckboxMenuItem mi7;
 	Checkbox c1,c2,c3,c4,c5,c6;
 	CheckboxGroup cb1;
 	Font f;
@@ -16,6 +20,18 @@ public class MyFrame extends Frame
 		super("My Test Application");
 		setLayout(null);
 		setBounds(0,0,1260,1000);
+		
+		mb1 = new MenuBar();
+		m1 = new Menu("Find");
+		m2 = new Menu("Delete");
+		mi1 = new MenuItem("Answer-1");
+		mi2 = new MenuItem("Answer-2");
+		mi3 = new MenuItem("Answer-3");
+		mi4 = new Menu("Answer-4");
+		mi5 = new MenuItem("Answer-41");
+		mi6 = new MenuItem("Answer-42");
+		mi7 = new CheckboxMenuItem("Answer-43");
+		
 		
 		c1 = new Checkbox("RRR");
 		c2 = new Checkbox("BAHUBALI-2");
@@ -28,6 +44,23 @@ public class MyFrame extends Frame
 		
 		b1 = new Button("DISPLAY");
 		f = new Font("Times",Font.BOLD,30);
+		
+		m1.add(mi1);
+		m1.add("-");
+		m1.add(mi2);
+		
+		m2.add(mi3);
+		
+		mi4.add(mi5);
+		mi4.add(mi6);
+		mi4.add(mi7);
+		m2.add(mi4);
+		
+		
+		mb1.add(m1);
+		mb1.add(m2);
+		
+		setMenuBar(mb1);
 		
 		add(c1);
 		add(c2);
@@ -52,6 +85,13 @@ public class MyFrame extends Frame
 		c5.setFont(f);
 		c6.setFont(f);
 		b1.setFont(f);
+		mi1.setFont(f);
+		mi2.setFont(f);
+		mi3.setFont(f);
+		mi4.setFont(f);
+		mi5.setFont(f);
+		mi6.setFont(f);
+		mi7.setFont(f);
 		
 		c1.addItemListener(ml);
 		c2.addItemListener(ml);
@@ -60,7 +100,10 @@ public class MyFrame extends Frame
 		c5.addItemListener(ml);
 		c6.addItemListener(ml);
 		b1.addActionListener(ml);
-		
+		mi1.addActionListener(ml);
+		mi2.addActionListener(ml);
+		mi3.addActionListener(ml);
+		//mi4.addActionListener(ml);
 		
 		addWindowListener(new WindowAdapter()
 			{
